@@ -57,39 +57,56 @@ function Register() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <h1>Registration Form</h1>
         <div>
-          <div>Username</div>
           <input
             className="card"
+            placeholder="Username"
             {...register("username", { required: true })}
           />
         </div>
-        {errors.username && <span>This field is required</span>}
+        {errors.username && (
+          <span className="text-warning">This field is required</span>
+        )}
         <div>
-          <div>Email</div>
-          <input className="card" {...register("email", { required: true })} />
-        </div>
-        {errors.email && <span>This field is required</span>}
-        <div>
-          <div>Password</div>
           <input
             className="card"
+            placeholder="Email"
+            {...register("email", { required: true })}
+          />
+        </div>
+        {errors.email && (
+          <span className="text-warning">This field is required</span>
+        )}
+        <div>
+          <input
+            className="card"
+            placeholder="Password"
             {...register("password", { required: true })}
           />
         </div>
-        {errors.password && <span>This field is required</span>}
+        {errors.password && (
+          <span className="text-warning">This field is required</span>
+        )}
         <div>
-          <div>Confirm Password</div>
           <input
             className="card"
+            placeholder="Confirm Password"
             {...register("confirmPassword", { required: true })}
           />
         </div>
-        {errors.confirmPassword && <span>This field is required</span>}
-        <div>{msg}</div>
+        {errors.confirmPassword && (
+          <span className="text-warning">This field is required</span>
+        )}
+        {isError ? <h4 className="text-warning">{msg}</h4> : <h4 className="text-success">{msg}</h4>}
         <div>
-          <button type="submit">Register</button>
+          <button type="submit">{isLoading ? 'Registering' : 'Register'}</button>
         </div>
       </form>
+      <a
+          className="App-link"
+          href="/"
+        >
+          Back to Home Page
+        </a>
     </div>
   );
 }

@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input {
+  font-size: large;
+}
+
+button {
+  font-size: large;
+  padding: 0.5em;
+  margin: 0.5em 0.5em;
+  border-radius: 0.5em;
+}
+
+.card {
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin: 0.5em 0.5em;
+}
+
+.text-warning {
+  color: red;
+}
+
+.text-success {
+  color: green;
+}
